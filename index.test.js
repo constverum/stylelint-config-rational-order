@@ -1,8 +1,8 @@
 const stylelint = require('stylelint');
 const stylelintConfig = require('.');
 
-const wrong = 'a { position: relative; color: red; display: block; border: 1px solid blue; background: white; }';
-const correct = 'a { position: relative; display: block; color: red; background: white; border: 1px solid blue; }';
+const wrong = 'a { position: relative; color: red; display: block; background: white; border: 1px solid blue;}';
+const correct = 'a { position: relative; display: block; border: 1px solid blue; color: red; background: white;}';
 
 test('wrong order', () => (
   stylelint.lint({
@@ -13,7 +13,7 @@ test('wrong order', () => (
     const { warnings } = output.results[0];
     expect(errored).toBeTruthy();
     expect(warnings[0].text).toEqual('Expected "display" to come before "color" (order/properties-order)');
-    expect(warnings[1].text).toEqual('Expected "background" to come before "border" (order/properties-order)');
+    expect(warnings[1].text).toEqual('Expected "border" to come before "background" (order/properties-order)');
   })
 ));
 
