@@ -1,22 +1,26 @@
 const stylelint = require('stylelint');
-const config = require('.');
+const config = require('./borderInBoxModel');
 
 const wrong = `
   a {
     position: relative;
-    color: red;
     display: block;
-    border: 1px solid blue;
+    color: red;
     background: white;
+    border: 1px solid blue;
   }
 `;
 const correct = `
   a {
     position: relative;
     display: block;
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid blue;
+    overflow: auto;
     color: red;
     background: white;
-    border: 1px solid blue;
   }
 `;
 
@@ -30,10 +34,10 @@ test('wrong order', () =>
       const { errored } = output;
       const { warnings } = output.results[0];
       const expectedWarnings = [
-        'Expected "display" to come before "color" (order/properties-order)',
-        'Expected "background" to come before "border" (order/properties-order)',
+        'Expected "border" to come before "background" (order/properties-order)',
       ];
       expect(errored).toBeTruthy();
+      expect(warnings.length).toEqual(expectedWarnings.length);
       warnings.forEach(({ text }, idx) => {
         expect(text).toEqual(expect.stringContaining(expectedWarnings[idx]));
       });

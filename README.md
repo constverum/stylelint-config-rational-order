@@ -71,6 +71,23 @@ yarn add --dev stylelint stylelint-config-rational-order
 }
 ```
 
+## FAQ
+
+<details>
+  <summary>I think the border property belongs to the *box model section* and not the visual one, can I change it?</summary>
+
+  Sure, just extend your configuration a little different:
+
+  ```javascript
+  {
+    "extends": [
+      // "stylelint-config-standard",
+      "stylelint-config-rational-order/borderInBoxModel"
+    ]
+  }
+  ```
+</details>
+
 ## Credits
 
 * [Code Guide by @mdo](http://codeguide.co/)

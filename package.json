@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-rational-order",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Stylelint config that sorts related property declarations by grouping together following the order: Positioning, Box Model, Typography, Visual, Animation, Other.",
   "author": "Constverum <constverum@gmail.com>",
   "license": "Apache-2.0",
@@ -20,6 +20,7 @@
     "stylelint",
     "stylelint-config",
     "stylelint-order",
+    "stylelint-plugin",
     "properties-order",
     "css property order",
     "declaration-order",
@@ -29,15 +30,18 @@
     "order"
   ],
   "dependencies": {
-    "stylelint-order": "^0.8.0"
+    "stylelint-order": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "^4.13.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.4.2",
-    "jest": "^21.2.1",
-    "stylelint": "^8.3.1"
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-jest": "^22.1.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.0.0",
+    "prettier": "^1.16.1",
+    "stylelint": "^9.10.1"
   },
   "homepage": "https://github.com/constverum/stylelint-config-rational-order"
 }

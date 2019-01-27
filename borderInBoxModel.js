@@ -7,14 +7,14 @@ const animation = require('./groups/animation');
 const misc = require('./groups/misc');
 const config = require('./config');
 
-const rational = [
+const rationalBorderInBoxModel = [
   ...special,
   ...positioning,
-  ...boxModel({ border: false }),
+  ...boxModel({ border: true }),
   ...typography,
-  ...visual({ border: true }),
+  ...visual({ border: false }),
   ...animation,
   ...misc,
 ];
 
-module.exports = config(rational);
+module.exports = config(rationalBorderInBoxModel);

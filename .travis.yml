@@ -3,9 +3,8 @@ sudo: false
 language: node_js
 
 node_js:
-  - '9'
-  - '8'
-  - '7'
+  - '11'
+  - '10'
 
 cache:
   directories:
@@ -19,4 +18,4 @@ deploy:
   on:
     tags: true
     branch: master
-    node_js: 9
+    node_js: 10
