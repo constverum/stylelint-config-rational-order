@@ -87,6 +87,20 @@ yarn add --dev stylelint stylelint-config-rational-order
   }
   ```
 </details>
+<details>
+  <summary>Can I add a empty line between the groups?</summary>
+
+  Sure, just extend your configuration a little different:
+
+  ```javascript
+  {
+    "extends": [
+      // "stylelint-config-standard",
+      "stylelint-config-rational-order/emptyLineBetweenGroups"
+    ]
+  }
+  ```
+</details>
 
 ## Credits
 
