@@ -71,6 +71,38 @@ yarn add --dev stylelint stylelint-config-rational-order
 }
 ```
 
+or use pakage as plugin for Stylelint:
+
+```javascript
+{
+  "plugins": [
+    "stylelint-config-rational-order/plugin"
+  ],
+  "plugin/rational-order": true
+}
+```
+
+## Options
+
+Boolean, or an array of options, where the first element is `true`, and the second is an options object.
+
+### Boolean option
+
+`true`: Enables the plugin.
+
+`false`: Disables the plugin.
+
+### Optional secondary options
+
+#### `"borderInBoxModel": Boolean`
+
+Default border property belongs to the *visual section* `"borderInBoxModel": false`. If `true` border property belongs to the *box model section*.
+
+#### `"emptyLineBeetweenGroup": Boolean`
+
+This option adds an empty line between groups. Default `false`.
+
+
 ## FAQ
 
 <details>
@@ -83,20 +115,6 @@ yarn add --dev stylelint stylelint-config-rational-order
     "extends": [
       // "stylelint-config-standard",
       "stylelint-config-rational-order/borderInBoxModel"
-    ]
-  }
-  ```
-</details>
-<details>
-  <summary>Can I add a empty line between the groups?</summary>
-
-  Sure, just extend your configuration a little different:
-
-  ```javascript
-  {
-    "extends": [
-      // "stylelint-config-standard",
-      "stylelint-config-rational-order/emptyLineBetweenGroups"
     ]
   }
   ```
