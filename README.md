@@ -71,54 +71,37 @@ yarn add --dev stylelint stylelint-config-rational-order
 }
 ```
 
-or use pakage as plugin for Stylelint:
-
+This shareable config contains the following:
 ```javascript
 {
   "plugins": [
     "stylelint-config-rational-order/plugin"
   ],
-  "plugin/rational-order": true
+  "rules": {
+    "plugin/rational-order": [true, {
+      "border-in-box-model": false,
+      "empty-line-between-groups": false,
+    }]
+  }
 }
 ```
 
-## Options
-
-Boolean, or an array of options, where the first element is `true`, and the second is an options object.
-
-### Boolean option
-
-`true`: Enables the plugin.
-
-`false`: Disables the plugin.
-
-### Optional secondary options
-
-#### `"borderInBoxModel": Boolean`
-
-Default border property belongs to the *visual section* `"borderInBoxModel": false`. If `true` border property belongs to the *box model section*.
-
-#### `"emptyLineBeetweenGroup": Boolean`
-
-This option adds an empty line between groups. Default `false`.
+Since it adds `stylelint-config-rational-order` to plugins, you don't have to do this yourself when extending this config.
 
 
-## FAQ
+## Optional options / rules
 
-<details>
-  <summary>I think the border property belongs to the *box model section* and not the visual one, can I change it?</summary>
+#### border-in-box-model
 
-  Sure, just extend your configuration a little different:
+Defines to which group the **border** property belongs to.
 
-  ```javascript
-  {
-    "extends": [
-      // "stylelint-config-standard",
-      "stylelint-config-rational-order/borderInBoxModel"
-    ]
-  }
-  ```
-</details>
+If `true` **border** property belongs to the **box model section**.
+The default value is `false` (**border** property belongs to the **visual section**).
+
+
+#### empty-line-between-groups
+
+If `true` adds an empty line between groups. The default value is `false`.
 
 ## Credits
 

@@ -1,3 +1,3 @@
 const config = require('./config/extendedStylelintOrderConfig');
 
-module.exports = config({ borderInBoxModel: false });
+module.exports = config();

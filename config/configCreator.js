@@ -6,8 +6,11 @@ const visual = require('../groups/visual');
 const animation = require('../groups/animation');
 const misc = require('../groups/misc');
 
-const configCreator = ({ borderInBoxModel = false, emptyLineBeetweenGroup = false }) => {
-  return [
+module.exports = ({
+  'border-in-box-model': borderInBoxModel = false,
+  'empty-line-between-groups': emptyLineBetweenGroups = false,
+} = {}) =>
+  [
     ['Special', special],
     ['Positioning', positioning],
     ['Box Model', boxModel({ border: borderInBoxModel })],
@@ -16,10 +19,7 @@ const configCreator = ({ borderInBoxModel = false, emptyLineBeetweenGroup = fals
     ['Animation', animation],
     ['Misc', misc],
   ].map(([groupName, properties]) => ({
-    emptyLineBefore: emptyLineBeetweenGroup ? 'always' : 'never',
+    emptyLineBefore: emptyLineBetweenGroups ? 'always' : 'never',
     properties,
     groupName,
   }));
-};
-
-module.exports = configCreator;
