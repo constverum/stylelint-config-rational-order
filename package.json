@@ -1,6 +1,6 @@
 {
   "name": "stylelint-config-rational-order",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Stylelint config that sorts related property declarations by grouping together following the order: Positioning, Box Model, Typography, Visual, Animation, Other.",
   "author": "Constverum <constverum@gmail.com>",
   "license": "Apache-2.0",
