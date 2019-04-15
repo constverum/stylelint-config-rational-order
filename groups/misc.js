@@ -1,5 +1,6 @@
 module.exports = [
   'appearance',
+  'content',
   'clip',
   'clip-path',
   'counter-reset',
