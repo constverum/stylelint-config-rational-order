@@ -20,7 +20,6 @@ const partOne = [
   'background-origin',
   'background-attachment',
   'background-blend-mode',
-  'box-decoration-break',
 ];
 
 const partTwo = [
@@ -30,6 +29,7 @@ const partTwo = [
   'outline-color',
   'outline-offset',
   'box-shadow',
+  'box-decoration-break',
   'transform',
   'transform-origin',
   'transform-style',
@@ -40,7 +40,9 @@ const partTwo = [
   'cursor',
   'opacity',
   'filter',
+  'isolation',
   'backdrop-filter',
+  'mix-blend-mode',
 ];
 
 module.exports = ({ border }) => [].concat(partOne, border ? borderProps : [], partTwo);
