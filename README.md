@@ -51,12 +51,12 @@ Stylelint config that sorts related property declarations by grouping together f
 
 ## Usage
 
-1.  Add stylelint and this package to your project:
+1.  Add `stylelint`, `stylelint-order` and this package to your project:
 
 ```bash
-npm install --save-dev stylelint stylelint-config-rational-order
+npm install --save-dev stylelint stylelint-order stylelint-config-rational-order
 # or, if you prefer yarn over npm:
-yarn add --dev stylelint stylelint-config-rational-order
+yarn add --dev stylelint stylelint-order stylelint-config-rational-order
 ```
 
 2.  Add this package to the end of your extends array inside Stylelint
@@ -75,9 +75,11 @@ This shareable config contains the following:
 ```javascript
 {
   "plugins": [
+    "stylelint-order",
     "stylelint-config-rational-order/plugin"
   ],
   "rules": {
+    "order/properties-order": [],
     "plugin/rational-order": [true, {
       "border-in-box-model": false,
       "empty-line-between-groups": false,
@@ -86,7 +88,7 @@ This shareable config contains the following:
 }
 ```
 
-Since it adds `stylelint-config-rational-order` to plugins, you don't have to do this yourself when extending this config.
+Since it adds `stylelint-order` and `stylelint-config-rational-order` to plugins and also adds required rules, you don't have to do this yourself when extending this config.
 
 
 ## Optional options / rules
