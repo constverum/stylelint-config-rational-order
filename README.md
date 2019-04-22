@@ -1,6 +1,9 @@
 # stylelint-config-rational-order
 
-[![NPM version][version-img]][npm-url] [![Build status][ci-img]][ci-url] [![License][l-img]][l-url]
+[![NPM version][version-img]][npm-url]
+[![NPM downloads][downloads-img]][npm-url]
+[![Build status][ci-img]][ci-url]
+[![License][l-img]][l-url]
 
 Stylelint config that sorts related property declarations by grouping together following the order:
 
@@ -123,6 +126,7 @@ If `true` adds an empty line between groups. The default value is `false`.
 
 
 [npm-url]: https://www.npmjs.com/package/stylelint-config-rational-order
+[downloads-img]: https://img.shields.io/npm/dt/stylelint-config-rational-order.svg?style=flat-square
 [version-img]: https://img.shields.io/npm/v/stylelint-config-rational-order.svg?style=flat-square
 [ci-url]: https://travis-ci.org/constverum/stylelint-config-rational-order
 [ci-img]: https://img.shields.io/travis/constverum/stylelint-config-rational-order.svg?style=flat-square
