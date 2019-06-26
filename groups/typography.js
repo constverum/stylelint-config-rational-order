@@ -5,6 +5,7 @@ module.exports = [
   'font-size',
   'font-family',
   'font-style',
+  'font-display',
   'font-variant',
   'font-size-adjust',
   'font-stretch',
