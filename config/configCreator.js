@@ -1,3 +1,4 @@
+const emptyLineBeforeOption = require('./emptyLineBeforeOption');
 const special = require('../groups/special');
 const positioning = require('../groups/positioning');
 const boxModel = require('../groups/boxModel');
@@ -19,7 +20,7 @@ module.exports = ({
     ['Animation', animation],
     ['Misc', misc],
   ].map(([groupName, properties]) => ({
-    emptyLineBefore: emptyLineBetweenGroups ? 'always' : 'never',
+    emptyLineBefore: emptyLineBeforeOption(emptyLineBetweenGroups),
     properties,
     groupName,
   }));

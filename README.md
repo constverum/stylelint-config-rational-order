@@ -75,7 +75,7 @@ yarn add --dev stylelint stylelint-order stylelint-config-rational-order
 ```
 
 This shareable config contains the following:
-```javascript
+```json
 {
   "plugins": [
     "stylelint-order",
@@ -86,6 +86,7 @@ This shareable config contains the following:
     "plugin/rational-order": [true, {
       "border-in-box-model": false,
       "empty-line-between-groups": false,
+      "empty-line-minimum-property-threshold": 0
     }]
   }
 }
@@ -107,6 +108,16 @@ The default value is `false` (**border** property belongs to the **visual sectio
 #### empty-line-between-groups
 
 If `true` adds an empty line between groups. The default value is `false`.
+
+A third option `'threshold'` is available and described under [empty-line-minimum-property-threshold](#empty-line-minimum-property-threshold)
+
+#### empty-line-minimum-property-threshold
+
+If `empty-line-between-groups: 'threshold'`, the empty line behaviour toggles based on the number of properties in the rule.
+
+When the configured minimum property threshold is reached, empty lines are **inserted**. When the number of properties is less than the minimum property threshold, empty lines are **removed**.
+
+_e.g. threshold set to **3**, and there are **5** properties in total, then groups will have an empty line inserted._
 
 ## FAQ
 
