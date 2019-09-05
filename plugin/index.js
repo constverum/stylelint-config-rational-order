@@ -1,5 +1,6 @@
 const stylelint = require('stylelint');
 const propertiesOrderRule = require('stylelint-order/rules/properties-order');
+const propertiesOrderOptionsCreator = require('../config/propertiesOrderOptionsCreator');
 const configCreator = require('../config/configCreator');
 
 const ruleName = 'plugin/rational-order';
@@ -19,15 +20,20 @@ module.exports = stylelint.createPlugin(
         optional: true,
         possible: {
           'border-in-box-model': [true, false],
-          'empty-line-between-groups': [true, false],
+          'empty-line-between-groups': [true, false, 'threshold'],
+          'empty-line-minimum-property-threshold': Number.isInteger,
         },
       },
     );
+
     if (!enabled || !validOptions) {
       return;
     }
+
     const expectation = configCreator(options);
-    propertiesOrderRule(expectation, undefined, context)(postcssRoot, postcssResult);
+    const propertiesOrderOptions = propertiesOrderOptionsCreator(options);
+
+    propertiesOrderRule(expectation, propertiesOrderOptions, context)(postcssRoot, postcssResult);
   },
 );
 

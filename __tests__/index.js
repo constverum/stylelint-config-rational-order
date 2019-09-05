@@ -191,6 +191,101 @@ describe('stylelint-config-rational-order/plugin', () => {
         expect(warnings).toHaveLength(0);
       });
     });
+
+    it('with "empty-line-between-groups" = "threshold" AND with "empty-line-minimum-property-threshold" = <default>', () => {
+      const rules = {
+        [ruleName]: [
+          true,
+          {
+            'empty-line-between-groups': 'threshold',
+          },
+        ],
+      };
+      const correct = `
+        a {
+          position: relative;
+          z-index: 10;
+
+          display: block;
+          width: auto;
+          height: auto;
+          margin: 10px;
+          padding: 10px;
+
+          color: red;
+
+          background: white;
+          border: 1px solid blue;
+        }
+      `;
+      return stylelint.lint(getPluginOptions(correct, rules)).then(output => {
+        const { errored } = output;
+        const { warnings } = output.results[0];
+        expect(errored).toBeFalsy();
+        expect(warnings).toHaveLength(0);
+      });
+    });
+
+    it('with "empty-line-between-groups" = "threshold" AND with "empty-line-minimum-property-threshold" = 5 (above threshold)', () => {
+      const rules = {
+        [ruleName]: [
+          true,
+          {
+            'empty-line-between-groups': 'threshold',
+            'empty-line-minimum-property-threshold': 5,
+          },
+        ],
+      };
+      const correct = `
+        a {
+          position: relative;
+          z-index: 10;
+
+          display: block;
+          width: auto;
+          height: auto;
+          margin: 10px;
+          padding: 10px;
+
+          color: red;
+
+          background: white;
+          border: 1px solid blue;
+        }
+      `;
+      return stylelint.lint(getPluginOptions(correct, rules)).then(output => {
+        const { errored } = output;
+        const { warnings } = output.results[0];
+        expect(errored).toBeFalsy();
+        expect(warnings).toHaveLength(0);
+      });
+    });
+
+    it('with "empty-line-between-groups" = "threshold" AND with "empty-line-minimum-property-threshold" = 5 (below threshold)', () => {
+      const rules = {
+        [ruleName]: [
+          true,
+          {
+            'empty-line-between-groups': 'threshold',
+            'empty-line-minimum-property-threshold': 5,
+          },
+        ],
+      };
+      const correct = `
+        a {
+          position: relative;
+          z-index: 10;
+          display: block;
+          background: white;
+        }
+      `;
+      return stylelint.lint(getPluginOptions(correct, rules)).then(output => {
+        const { errored } = output;
+        const { warnings } = output.results[0];
+        expect(errored).toBeFalsy();
+        expect(warnings).toHaveLength(0);
+      });
+    });
   });
 
   describe('wrong order with disabled plugin', () => {
