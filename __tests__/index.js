@@ -139,6 +139,75 @@ describe('stylelint-config-rational-order/plugin', () => {
           display: block;
           width: auto;
           height: auto;
+          /* empty lines within group should be ignored */
+
+          margin: 10px;
+
+          padding: 10px;
+
+          color: red;
+
+          background: white;
+          border: 1px solid blue;
+        }
+      `;
+      return stylelint.lint(getPluginOptions(correct, rules)).then(output => {
+        const { errored } = output;
+        const { warnings } = output.results[0];
+        expect(errored).toBeFalsy();
+        expect(warnings).toHaveLength(0);
+      });
+    });
+
+    it('with "no-empty-lines-between-properties" = true', () => {
+      const rules = {
+        [ruleName]: [
+          true,
+          {
+            'no-empty-lines-between-properties': true,
+          },
+        ],
+      };
+      const correct = `
+        a {
+          position: relative;
+          z-index: 10;
+          display: block;
+          width: auto;
+          height: auto;
+          margin: 10px;
+          padding: 10px;
+          color: red;
+          background: white;
+          border: 1px solid blue;
+        }
+      `;
+      return stylelint.lint(getPluginOptions(correct, rules)).then(output => {
+        const { errored } = output;
+        const { warnings } = output.results[0];
+        expect(errored).toBeFalsy();
+        expect(warnings).toHaveLength(0);
+      });
+    });
+
+    it('with "empty-line-between-groups" = true AND "no-empty-lines-between-properties" = true', () => {
+      const rules = {
+        [ruleName]: [
+          true,
+          {
+            'empty-line-between-groups': true,
+            'no-empty-lines-between-properties': true,
+          },
+        ],
+      };
+      const correct = `
+        a {
+          position: relative;
+          z-index: 10;
+
+          display: block;
+          width: auto;
+          height: auto;
           margin: 10px;
           padding: 10px;
 
