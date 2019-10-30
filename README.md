@@ -86,6 +86,7 @@ This shareable config contains the following:
     "plugin/rational-order": [true, {
       "border-in-box-model": false,
       "empty-line-between-groups": false,
+      "no-empty-lines-between-properties": false,
     }]
   }
 }
@@ -107,6 +108,11 @@ The default value is `false` (**border** property belongs to the **visual sectio
 #### empty-line-between-groups
 
 If `true` adds an empty line between groups. The default value is `false`.
+
+#### no-empty-lines-between-properties
+
+If `true` properties within group should not have empty lines between them.
+
 
 ## FAQ
 
