@@ -13,8 +13,8 @@
     "url": "https://github.com/constverum/stylelint-config-rational-order/issues"
   },
   "scripts": {
-    "lint": "node ./node_modules/eslint/bin/eslint.js .",
-    "test": "node ./node_modules/jest-cli/bin/jest.js"
+    "lint": "eslint .",
+    "test": "jest"
   },
   "keywords": [
     "stylelint",
@@ -29,19 +29,22 @@
     "order-css",
     "order"
   ],
-  "dependencies": {
-    "stylelint": "^9.10.1",
-    "stylelint-order": "^2.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^4.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jest": "^23.0.2",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.7.1",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "stylelint": "^11.1.1",
+    "stylelint-order": "^3.1.1"
   },
-  "homepage": "https://github.com/constverum/stylelint-config-rational-order"
+  "homepage": "https://github.com/constverum/stylelint-config-rational-order",
+  "peerDependencies": {
+    "stylelint": "^11.1.1",
+    "stylelint-order": "^3.1.1"
+  }
 }
