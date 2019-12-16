@@ -1,5 +1,5 @@
 {
-  "name": "stylelint-config-rational-order",
+  "name": "@zielak/stylelint-config-rational-order",
   "version": "0.1.2",
   "description": "Stylelint config that sorts related property declarations by grouping together following the order: Positioning, Box Model, Typography, Visual, Animation, Other.",
   "author": "Constverum <constverum@gmail.com>",
@@ -31,20 +31,20 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^6.6.0",
+    "eslint": "^6.7.2",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^23.0.2",
-    "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.7.1",
-    "prettier": "^1.16.4",
-    "stylelint": "^11.1.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^12.0.0",
     "stylelint-order": "^3.1.1"
   },
   "homepage": "https://github.com/constverum/stylelint-config-rational-order",
   "peerDependencies": {
-    "stylelint": "^11.1.1",
+    "stylelint": "^12.0.0",
     "stylelint-order": "^3.1.1"
   }
 }
