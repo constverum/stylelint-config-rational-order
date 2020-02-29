@@ -8,7 +8,7 @@ const misc = require('../groups/misc');
 
 module.exports = ({
   'border-in-box-model': borderInBoxModel = false,
-  'empty-line-between-groups': emptyLineBetweenGroups = false,
+  'empty-line-between-groups': emptyLineBetweenGroups = 'never',
 } = {}) =>
   [
     ['Special', special],
@@ -19,7 +19,7 @@ module.exports = ({
     ['Animation', animation],
     ['Misc', misc],
   ].map(([groupName, properties]) => ({
-    emptyLineBefore: emptyLineBetweenGroups ? 'always' : 'never',
+    emptyLineBefore: emptyLineBetweenGroups,
     properties,
     groupName,
   }));

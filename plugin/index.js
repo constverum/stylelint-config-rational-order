@@ -19,7 +19,7 @@ module.exports = stylelint.createPlugin(
         optional: true,
         possible: {
           'border-in-box-model': [true, false],
-          'empty-line-between-groups': [true, false],
+          'empty-line-between-groups': ['always', 'never', 'threshold'],
         },
       },
     );

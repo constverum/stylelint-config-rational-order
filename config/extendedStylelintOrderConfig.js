@@ -3,7 +3,7 @@ const specialProps = require('../groups/special');
 
 module.exports = ({
   'border-in-box-model': borderInBoxModel = false,
-  'empty-line-between-groups': emptyLineBetweenGroups = false,
+  'empty-line-between-groups': emptyLineBetweenGroups = 'never',
 } = {}) => ({
   plugins: ['stylelint-order', path.join(__dirname, '../plugin')],
   rules: {
