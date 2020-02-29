@@ -108,6 +108,12 @@ The default value is `false` (**border** property belongs to the **visual sectio
 
 Mirrors the `emptyLineBefore` option of `stylelint-order`'s [`properties-order` rule](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md). Valid options are `never` (the default), which forbids empty lines between groups; `always`, which makes empty lines between groups mandatory; and `threshold`, which requires an empty line whenever a rule exceeds a [configurable](https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md#emptylineminimumpropertythreshold-number) number of properties.
 
+#### empty-line-within-groups
+
+Sets whether it's permissible for empty lines to appear within groups of properties.
+
+If set to `true` (the default), Stylelint will not return errors when groups contain arbitrary empty lines. If set to `false`, visual grouping is enforced in addition to logical grouping.
+
 ## FAQ
 
 <details>

@@ -20,6 +20,7 @@ module.exports = stylelint.createPlugin(
         possible: {
           'border-in-box-model': [true, false],
           'empty-line-between-groups': ['always', 'never', 'threshold'],
+          'empty-lines-within-groups': [true, false],
         },
       },
     );
