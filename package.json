@@ -30,8 +30,8 @@
     "order"
   ],
   "dependencies": {
-    "stylelint": "^9.10.1",
-    "stylelint-order": "^2.2.1"
+    "stylelint": "^13.13.1",
+    "stylelint-order": "^4.0.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
