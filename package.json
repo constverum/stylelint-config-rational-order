@@ -1,12 +1,14 @@
 {
   "name": "@greenly/stylelint-config-rational-order",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Stylelint config that sorts related property declarations by grouping together following the order: Positioning, Box Model, Typography, Visual, Animation, Other.",
   "author": "Constverum <constverum@gmail.com>",
-  "contributors": [{
-    "name" : "Darek Greenly",
-    "url" : "https://darekgreenly.com"
-  }],
+  "contributors": [
+    {
+      "name": "Darek Greenly",
+      "url": "https://darekgreenly.com"
+    }
+  ],
   "license": "Apache-2.0",
   "main": "index.js",
   "repository": {
@@ -36,19 +38,19 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.1.1",
     "prettier": "^2.4.0",
-    "stylelint": "^13.13.1",
-    "stylelint-order": "^4.1.0"
+    "stylelint": "^14.1.0",
+    "stylelint-order": "^5.0.0"
   },
   "peerDependencies": {
-    "stylelint": "^13.13.1",
-    "stylelint-order": "^4.1.0"
+    "stylelint": "^14.1.0",
+    "stylelint-order": "^5.0.0"
   }
 }
