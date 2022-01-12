@@ -41,22 +41,22 @@
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.2",
-    "eslint": "^8.4.0",
+    "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
-    "jest": "^27.1.1",
+    "jest": "^27.4.7",
     "lint-staged": "^12.1.7",
-    "prettier": "^2.4.0",
+    "prettier": "^2.5.1",
     "semantic-release": "^18.0.1",
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-order": "^5.0.0"
   },
   "peerDependencies": {
-    "stylelint": "^14.1.0",
+    "stylelint": "^14.2.0",
     "stylelint-order": "^5.0.0"
   }
 }
