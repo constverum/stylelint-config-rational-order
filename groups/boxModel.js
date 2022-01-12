@@ -28,6 +28,8 @@ const partOne = [
   'grid-template-rows',
   'grid-template-columns',
   'gap',
+  'row-gap',
+  'column-gap',
   'align-content',
   'align-items',
   'align-self',
