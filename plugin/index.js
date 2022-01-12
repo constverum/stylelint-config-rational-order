@@ -22,14 +22,18 @@ module.exports = stylelint.createPlugin(
           'empty-line-between-groups': [true, false],
           'no-empty-lines-between-properties': [true, false],
         },
-      },
+      }
     );
     if (!enabled || !validOptions) {
       return;
     }
     const expectation = configCreator(options);
-    propertiesOrderRule(expectation, undefined, context)(postcssRoot, postcssResult);
-  },
+    propertiesOrderRule(
+      expectation,
+      undefined,
+      context
+    )(postcssRoot, postcssResult);
+  }
 );
 
 module.exports.ruleName = ruleName;

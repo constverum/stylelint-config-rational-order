@@ -56,6 +56,13 @@ const partOne = [
   'padding-left',
 ];
 
-const partTwo = ['object-fit', 'object-position', 'overflow', 'overflow-x', 'overflow-y'];
+const partTwo = [
+  'object-fit',
+  'object-position',
+  'overflow',
+  'overflow-x',
+  'overflow-y',
+];
 
-module.exports = ({ border }) => [].concat(partOne, border ? borderProps : [], partTwo);
+module.exports = ({ border }) =>
+  [].concat(partOne, border ? borderProps : [], partTwo);

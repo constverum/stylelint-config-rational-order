@@ -24,4 +24,5 @@ module.exports = ({
     noEmptyLineBetween: noEmptyLinesBetweenProperties,
     properties,
     groupName,
+    severity: 'warning',
   }));

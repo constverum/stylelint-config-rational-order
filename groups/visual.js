@@ -45,4 +45,5 @@ const partTwo = [
   'mix-blend-mode',
 ];
 
-module.exports = ({ border }) => [].concat(partOne, border ? borderProps : [], partTwo);
+module.exports = ({ border }) =>
+  [].concat(partOne, border ? borderProps : [], partTwo);

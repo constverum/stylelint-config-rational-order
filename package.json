@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Zielak/stylelint-config-rational-order",
   "scripts": {
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [
     "stylelint",
@@ -36,7 +37,6 @@
     "order-css",
     "order"
   ],
-  "dependencies": {},
   "devDependencies": {
     "eslint": "^8.4.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -44,7 +44,9 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "jest": "^27.1.1",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.4.0",
     "stylelint": "^14.1.0",
     "stylelint-order": "^5.0.0"
