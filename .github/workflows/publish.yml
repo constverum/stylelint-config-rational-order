@@ -17,11 +17,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version-file: '.nvmrc'
-      - name: Restore npm cache
-        uses: ./.github/actions/npm-cache
+      - name: Cache npm
+        uses: actions/cache@v2
         with:
-          cache-name: npm_cache
-          hash: ${{ hashFiles('./package-lock.json' ) }}
+          path: '~/.npm'
+          key: ${{ runner.os }}-build-${{ hashFiles('./package-lock.json' ) }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - run: npm ci
       - run: npm run lint
       - run: npm run test
