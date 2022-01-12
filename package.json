@@ -11,6 +11,13 @@
   ],
   "license": "Apache-2.0",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "borderInBoxModel.js",
+    "config/*",
+    "groups/*",
+    "plugin/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Zielak/stylelint-config-rational-order.git"
