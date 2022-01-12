@@ -131,7 +131,7 @@ The pros and cons of both ways in detail:
 [npm-url]: https://www.npmjs.com/package/@greenly/stylelint-config-rational-order
 [downloads-img]: https://img.shields.io/npm/dt/@greenly/stylelint-config-rational-order.svg?style=flat-square
 [version-img]: https://img.shields.io/npm/v/@greenly/stylelint-config-rational-order.svg?style=flat-square
-[ci-url]: https://travis-ci.org/zielak/stylelint-config-rational-order
+[ci-url]: https://github.com/Zielak/stylelint-config-rational-order/actions
 [ci-img]: https://img.shields.io/github/workflow/status/zielak/stylelint-config-rational-order/ci/.svg?style=flat-square
 [l-url]: https://www.npmjs.com/package/@greenly/stylelint-config-rational-order
 [l-img]: https://img.shields.io/npm/l/@greenly/stylelint-config-rational-order.svg?style=flat-square
