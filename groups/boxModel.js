@@ -49,11 +49,15 @@ const partOne = [
   'margin-right',
   'margin-bottom',
   'margin-left',
+  'margin-block',
+  'margin-inline',
   'padding',
   'padding-top',
   'padding-right',
   'padding-bottom',
   'padding-left',
+  'padding-block',
+  'padding-inline',
 ];
 
 const partTwo = [
