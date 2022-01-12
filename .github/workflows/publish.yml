@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
+      - name: Restore npm cache
+        uses: ./.github/actions/npm-cache
+        with:
+          cache-name: npm_cache
+          hash: ${{ hashFiles('./package-lock.json' ) }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

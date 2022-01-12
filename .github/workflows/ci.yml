@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version-file: '.nvmrc'
+      - name: Restore npm cache
+        uses: ./.github/actions/npm-cache
+        with:
+          cache-name: npm_cache
+          hash: ${{ hashFiles('./package-lock.json' ) }}
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test

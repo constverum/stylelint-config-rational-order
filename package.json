@@ -13,7 +13,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zielak/stylelint-config-rational-order.git"
+    "url": "https://github.com/Zielak/stylelint-config-rational-order.git"
   },
   "bugs": {
     "url": "https://github.com/Zielak/stylelint-config-rational-order/issues"
@@ -22,7 +22,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "stylelint",
@@ -38,6 +39,8 @@
     "order"
   ],
   "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.2",
     "eslint": "^8.4.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -48,6 +51,7 @@
     "jest": "^27.1.1",
     "lint-staged": "^12.1.7",
     "prettier": "^2.4.0",
+    "semantic-release": "^18.0.1",
     "stylelint": "^14.1.0",
     "stylelint-order": "^5.0.0"
   },
