@@ -28,6 +28,8 @@ const partOne = [
   'grid-template-rows',
   'grid-template-columns',
   'gap',
+  'row-gap',
+  'column-gap',
   'align-content',
   'align-items',
   'align-self',
@@ -49,13 +51,24 @@ const partOne = [
   'margin-right',
   'margin-bottom',
   'margin-left',
+  'margin-block',
+  'margin-inline',
   'padding',
   'padding-top',
   'padding-right',
   'padding-bottom',
   'padding-left',
+  'padding-block',
+  'padding-inline',
 ];
 
-const partTwo = ['object-fit', 'object-position', 'overflow', 'overflow-x', 'overflow-y'];
+const partTwo = [
+  'object-fit',
+  'object-position',
+  'overflow',
+  'overflow-x',
+  'overflow-y',
+];
 
-module.exports = ({ border }) => [].concat(partOne, border ? borderProps : [], partTwo);
+module.exports = ({ border }) =>
+  [].concat(partOne, border ? borderProps : [], partTwo);
