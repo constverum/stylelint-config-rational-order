@@ -45,5 +45,6 @@
     "stylelint": "^13.8.0",
     "stylelint-order": "^4.1.0"
   },
-  "homepage": "https://github.com/constverum/stylelint-config-rational-order"
+  "homepage": "https://github.com/constverum/stylelint-config-rational-order",
+  "packageManager": "yarn@3.2.2"
 }
