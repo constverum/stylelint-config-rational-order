@@ -4,6 +4,20 @@ const configCreator = require('../config/configCreator');
 
 const ruleName = 'plugin/rational-order';
 
+const PER_GROUP_SETTINGS = {
+  'border-in-box-model': [true, false],
+  'empty-line-between-groups': ['always', 'never', 'threshold'],
+  'empty-lines-within-groups': [true, false],
+  'property-order': ['flexible'],
+};
+
+const SECONDARY_SETTINGS = {
+  'disable-fix': [true, false],
+  'empty-line-before-unspecified': ['always', 'never', 'threshold'],
+  'empty-line-property-threshold': [o => Number.isInteger(o)],
+  unspecified: ['top', 'bottom', 'bottomAlphabetical', 'ignore'],
+};
+
 module.exports = stylelint.createPlugin(
   ruleName,
   (enabled, options, context) => (postcssRoot, postcssResult) => {
@@ -18,16 +32,29 @@ module.exports = stylelint.createPlugin(
         actual: options,
         optional: true,
         possible: {
-          'border-in-box-model': [true, false],
-          'empty-line-between-groups': [true, false],
+          ...PER_GROUP_SETTINGS,
+          ...SECONDARY_SETTINGS,
         },
       },
     );
+
     if (!enabled || !validOptions) {
       return;
     }
-    const expectation = configCreator(options);
-    propertiesOrderRule(expectation, undefined, context)(postcssRoot, postcssResult);
+
+    const resolvedGroupSettings = Object.keys(PER_GROUP_SETTINGS).reduce((acc, val) => {
+      acc[val] = options[val];
+      return acc;
+    }, {});
+    const resolvedSecondarySettings = Object.keys(SECONDARY_SETTINGS).reduce((acc, val) => {
+      acc[val] = options[val];
+      return acc;
+    }, {});
+
+    const primaryOptions = configCreator.groupSettings(resolvedGroupSettings);
+    const secondaryOptions = configCreator.secondarySettings(resolvedSecondarySettings);
+
+    propertiesOrderRule(primaryOptions, secondaryOptions, context)(postcssRoot, postcssResult);
   },
 );
 
